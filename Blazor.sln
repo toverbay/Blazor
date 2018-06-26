@@ -95,11 +95,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Blazor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.Blazor.Analyzers.Test", "test\Microsoft.AspNetCore.Blazor.Analyzers.Test\Microsoft.AspNetCore.Blazor.Analyzers.Test.csproj", "{CF3B5990-7A05-4993-AACA-D2C8D7AFF6E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.JSInterop", "src\Microsoft.JSInterop\Microsoft.JSInterop.csproj", "{C866B19D-AFFF-45B7-8DAB-71805F39D516}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.JSInterop", "src\Microsoft.JSInterop\Microsoft.JSInterop.csproj", "{C866B19D-AFFF-45B7-8DAB-71805F39D516}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.JSInterop.Test", "test\Microsoft.JSInterop.Test\Microsoft.JSInterop.Test.csproj", "{BA1CE1FD-89D8-423F-A21B-6B212674EB39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.JSInterop.Test", "test\Microsoft.JSInterop.Test\Microsoft.JSInterop.Test.csproj", "{BA1CE1FD-89D8-423F-A21B-6B212674EB39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.WebAssembly.Interop", "src\Mono.WebAssembly.Interop\Mono.WebAssembly.Interop.csproj", "{C56873E6-8F49-476E-AF51-B5D187832CF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mono.WebAssembly.Interop", "src\Mono.WebAssembly.Interop\Mono.WebAssembly.Interop.csproj", "{C56873E6-8F49-476E-AF51-B5D187832CF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "re4", "re4\re4.csproj", "{C42BF063-8627-460D-8D8D-E5B03A3BE150}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "retina-state", "retina-state\retina-state.csproj", "{06BA7B7E-AE07-4ED4-A34F-8900E167BA59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "retina-state.js", "retina-state.Js\retina-state.js.csproj", "{19FDF9EE-F7CF-4D97-A4D4-0100DF8BB498}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -368,6 +374,30 @@ Global
 		{C56873E6-8F49-476E-AF51-B5D187832CF5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C56873E6-8F49-476E-AF51-B5D187832CF5}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
 		{C56873E6-8F49-476E-AF51-B5D187832CF5}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{C42BF063-8627-460D-8D8D-E5B03A3BE150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C42BF063-8627-460D-8D8D-E5B03A3BE150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C42BF063-8627-460D-8D8D-E5B03A3BE150}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{C42BF063-8627-460D-8D8D-E5B03A3BE150}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{C42BF063-8627-460D-8D8D-E5B03A3BE150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C42BF063-8627-460D-8D8D-E5B03A3BE150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C42BF063-8627-460D-8D8D-E5B03A3BE150}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{C42BF063-8627-460D-8D8D-E5B03A3BE150}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{06BA7B7E-AE07-4ED4-A34F-8900E167BA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06BA7B7E-AE07-4ED4-A34F-8900E167BA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06BA7B7E-AE07-4ED4-A34F-8900E167BA59}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{06BA7B7E-AE07-4ED4-A34F-8900E167BA59}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{06BA7B7E-AE07-4ED4-A34F-8900E167BA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06BA7B7E-AE07-4ED4-A34F-8900E167BA59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06BA7B7E-AE07-4ED4-A34F-8900E167BA59}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{06BA7B7E-AE07-4ED4-A34F-8900E167BA59}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
+		{19FDF9EE-F7CF-4D97-A4D4-0100DF8BB498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19FDF9EE-F7CF-4D97-A4D4-0100DF8BB498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19FDF9EE-F7CF-4D97-A4D4-0100DF8BB498}.DebugNoVSIX|Any CPU.ActiveCfg = Debug|Any CPU
+		{19FDF9EE-F7CF-4D97-A4D4-0100DF8BB498}.DebugNoVSIX|Any CPU.Build.0 = Debug|Any CPU
+		{19FDF9EE-F7CF-4D97-A4D4-0100DF8BB498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19FDF9EE-F7CF-4D97-A4D4-0100DF8BB498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19FDF9EE-F7CF-4D97-A4D4-0100DF8BB498}.ReleaseNoVSIX|Any CPU.ActiveCfg = Release|Any CPU
+		{19FDF9EE-F7CF-4D97-A4D4-0100DF8BB498}.ReleaseNoVSIX|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

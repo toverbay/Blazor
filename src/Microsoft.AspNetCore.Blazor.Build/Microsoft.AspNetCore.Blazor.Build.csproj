@@ -70,7 +70,7 @@
     <PackageReference Include="AngleSharp" Version="0.9.9.2" />
 
     <!-- Intentionally include Razor.Design's MSBuild assets for everyone who reference Blazor.Build -->
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="$(RazorPackageVersion)" PrivateAssets="None" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.1" PrivateAssets="None" />
 
     <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.FileProviders.Composite" Version="2.0.0" />
