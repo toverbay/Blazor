@@ -2,7 +2,7 @@ using System;
 
 namespace RetinaState.Behaviors.ReduxDevTools
 {
-    internal class ReduxAction
+    internal sealed class ReduxAction
     {
         public ReduxAction(object request)
         {

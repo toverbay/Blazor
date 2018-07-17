@@ -2,7 +2,7 @@ using MediatR;
 
 namespace RetinaState.Features.Routing
 {
-    internal class InitializeRouteRequest : IRequest<RouteState>
+    internal sealed class InitializeRouteRequest : IRequest<RouteState>
     {
     }
 }

@@ -7,12 +7,12 @@ namespace RetinaState.Features.JavaScriptInterop
 {
     public class JsonRequestHandler
     {
-        private string _debugName;
-
         public JsonRequestHandler(
             ILogger<JsonRequestHandler> logger,
             IMediator mediator)
         {
+            DebugName = GetType().FullName;
+
             Logger = logger;
             Logger.LogDebug($"{DebugName}: ctor");
 
@@ -21,19 +21,7 @@ namespace RetinaState.Features.JavaScriptInterop
 
         private ILogger Logger { get; }
         private IMediator Mediator { get; }
-
-        private string DebugName
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(_debugName))
-                {
-                    _debugName = GetType().Name;
-                }
-
-                return _debugName;
-            }
-        }
+        private string DebugName { get; }
 
         public async void Handle(string requestAsJson)
         {

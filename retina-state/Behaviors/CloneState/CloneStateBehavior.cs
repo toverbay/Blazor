@@ -1,29 +1,28 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RetinaState.Behaviors.CloneState
+namespace RetinaState.Behaviors.State
 {
-    internal class CloneStateBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    internal sealed class CloneStateBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
-        private string _debugName;
-
         public CloneStateBehavior(
             ILogger<CloneStateBehavior<TRequest, TResponse>> logger,
             IStore store)
         {
+            DebugName = GetType().FullName;
+
             Logger = logger;
-            Logger.LogDebug($"{DebugName} ctor");
+            Logger.LogDebug($"{DebugName}: ctor");
 
             Store = store;
         }
 
         private ILogger Logger { get; }
         private IStore Store { get; }
+        private string DebugName { get; }
 
         public async Task<TResponse> Handle(
             TRequest request,
@@ -84,19 +83,6 @@ namespace RetinaState.Behaviors.CloneState
                 }
 
                 throw;
-            }
-        }
-
-        private string DebugName
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(_debugName))
-                {
-                    _debugName = GetType().Name;
-                }
-
-                return _debugName;
             }
         }
     }

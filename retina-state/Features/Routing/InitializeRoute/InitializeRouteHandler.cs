@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Blazor.Services;
 
 namespace RetinaState.Features.Routing
 {
-    internal class InitializeRouteHandler : RequestHandler<InitializeRouteRequest, RouteState>
+    internal sealed class InitializeRouteHandler : RequestHandler<InitializeRouteRequest, RouteState>
     {
         public InitializeRouteHandler(
             IStore store,

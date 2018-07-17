@@ -4,19 +4,20 @@ using System.Threading.Tasks;
 
 namespace RetinaState.Behaviors.ReduxDevTools
 {
-    internal class ReduxDevToolsInterop
+    internal sealed class ReduxDevToolsInterop
     {
-        private string _debugName;
         private const string jsFunctionName = "ReduxDevToolsDispatch";
 
         public ReduxDevToolsInterop(
             ILogger<ReduxDevToolsInterop> logger)
         {
+            DebugName = GetType().FullName;
             Logger = logger;
         }
 
         public bool IsEnabled { get; set; }
         private ILogger Logger { get; }
+        private string DebugName { get; }
 
         public void Dispatch<TRequest>(in TRequest request, in object state)
         {
@@ -57,19 +58,6 @@ namespace RetinaState.Behaviors.ReduxDevTools
             if (IsEnabled)
             {
                 await JSRuntime.Current.InvokeAsync<object>(jsFunctionName, "init", state);
-            }
-        }
-
-        private string DebugName
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(_debugName))
-                {
-                    _debugName = GetType().Name;
-                }
-
-                return _debugName;
             }
         }
     }

@@ -1,12 +1,10 @@
-using RetinaState.State;
-
 namespace RetinaState.Features.Routing
 {
-    internal class RouteState : State<RouteState>
+    internal sealed class RouteState : State<RouteState>
     {
         public RouteState() { }
 
-        protected RouteState(RouteState state) : this()
+        private RouteState(RouteState state) : this()
         {
             Route = state.Route;
         }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Blazor.Services;
 
 namespace RetinaState.Features.Routing
 {
-    internal class RouteManager
+    internal sealed class RouteManager
     {
         public RouteManager(
             IUriHelper uriHelper,

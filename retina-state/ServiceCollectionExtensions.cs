@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 using System;
 using System.Linq;
 using MediatR;
-using RetinaState.Behaviors.CloneState;
+using RetinaState.Behaviors.State;
 using RetinaState.Behaviors.ReduxDevTools;
 using RetinaState.Features.JavaScriptInterop;
 using RetinaState.Features.Routing;
@@ -34,7 +34,7 @@ namespace RetinaState
             if (options.UseCloneStateBehavior)
             {
                 services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CloneStateBehavior<,>));
-                
+                services.AddSingleton(typeof(IStore), typeof(Store));
             }
 
             if (options.UseReduxDevToolsBehavior)
@@ -59,6 +59,5 @@ namespace RetinaState
         public bool UseCloneStateBehavior { get; set; } = true;
         public bool UseReduxDevToolsBehavior { get; set; } = true;
         public bool UseRouting { get; set; } = true;
-
     }
 }

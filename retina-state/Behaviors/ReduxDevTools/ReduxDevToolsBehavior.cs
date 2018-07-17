@@ -1,20 +1,20 @@
 using MediatR.Pipeline;
 using Microsoft.Extensions.Logging;
-using RetinaState.Behaviors.ReduxDevTools.Feautures;
+using RetinaState.Behaviors.ReduxDevTools.Features;
 using System;
 using System.Threading.Tasks;
 
 namespace RetinaState.Behaviors.ReduxDevTools
 {
-    internal class ReduxDevToolsBehavior<TRequest, Unit> : IRequestPostProcessor<TRequest, Unit>
+    internal sealed class ReduxDevToolsBehavior<TRequest, Unit> : IRequestPostProcessor<TRequest, Unit>
     {
-        private string _debugName;
-
         public ReduxDevToolsBehavior(
             ILogger<ReduxDevToolsBehavior<TRequest, Unit>> logger,
             ReduxDevToolsInterop reduxDevToolsInterop,
             IStore store)
         {
+            DebugName = GetType().FullName;
+
             Logger = logger;
             Logger.LogDebug($"{ DebugName}: ctor");
 
@@ -25,7 +25,8 @@ namespace RetinaState.Behaviors.ReduxDevTools
         private ILogger Logger { get; }
         private ReduxDevToolsInterop ReduxDevToolsInterop { get; }
         private IStore Store { get; }
-        
+        private string DebugName { get; set; }
+
         public async Task Process(TRequest request, Unit response)
         {
             try
@@ -44,19 +45,6 @@ namespace RetinaState.Behaviors.ReduxDevTools
                 Logger.LogError($"{DebugName}: Error: {ex.Message}");
                 Logger.LogError($"{DebugName}: Inner Error: {ex.InnerException?.Message ?? "none"}");
                 Logger.LogDebug($"{DebugName}: StackTrace: {ex.StackTrace}");
-            }
-        }
-
-        private string DebugName
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(_debugName))
-                {
-                    _debugName = GetType().Name;
-                }
-
-                return _debugName;
             }
         }
     }

@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\retina-state\retina-state.csproj" />
+    <ProjectReference Include="..\retina-state\RetinaState.csproj" />
     <ProjectReference Include="..\src\Microsoft.AspNetCore.Blazor.Browser\Microsoft.AspNetCore.Blazor.Browser.csproj" />
     <ProjectReference Include="..\src\Microsoft.AspNetCore.Blazor\Microsoft.AspNetCore.Blazor.csproj" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 using Microsoft.JSInterop;
 using System;
 
-namespace RetinaState.State
+namespace RetinaState
 {
     public abstract class State<TState> : IState<TState>
     {
